@@ -213,27 +213,27 @@ for u in range(2):
                 for p in range(xr1):
                     ImtO[m+yta][p+xta] = ImD[v][m+ysi][p+xsi]
             
-            #Now do the cross correlation!
-            print("Cross correlation for Obs " + D[v])
-            corr = signal.correlate2d(ImtO, Imtca, boundary='fill', mode='same')
+        #Now do the cross correlation!
+        print("Cross correlation for Obs " + D[v])
+        corr = signal.correlate2d(ImtO, Imtca, boundary='fill', mode='same')
 
-            #Find the peak in the xcorr function, by fitting with a Gaussian
-            Gfxc, Gfxce, Dx1, Dy1 = FindGaussPeak(corr, int(0.5*len(Imtca[0])), int(0.5*len(Imtca)), 80)
-            print("\nBest fit of source 1 Amplitude: ", round(Gfxc[0], 3), " +- ", round(Gfxce[0], 3))
-            print("Best fit of source 1 centre in x: ", round(Gfxc[1] + Dx1, 3), " +- ", round(Gfxce[1], 3))
-            print("Best fit of source 1 centre in y: ", round(Gfxc[2] + Dy1, 3), " +- ", round(Gfxce[2], 3))
-            print("Best fit of source 1 sigma in x: ", round(Gfxc[3], 3), " +- ", round(Gfxce[3], 3))
-            print("Best fit of source 1 sigma in y: ", round(Gfxc[4], 3), " +- ", round(Gfxce[4], 3))
-            print("Best fit of source 1 Background x gradient: ", round(Gfxc[5], 5), " +- ", round(Gfxce[5], 5))
-            print("Best fit of source 1 Background y gradient: ", round(Gfxc[6], 5), " +- ", round(Gfxce[6], 5))
-            print("Best fit of source 1 Background constant: ", round(Gfxc[7], 5), " +- ", round(Gfxce[7], 5))
+        #Find the peak in the xcorr function, by fitting with a Gaussian
+        Gfxc, Gfxce, Dx1, Dy1 = FindGaussPeak(corr, int(0.5*len(Imtca[0])), int(0.5*len(Imtca)), 80)
+        print("\nBest fit of source 1 Amplitude: ", round(Gfxc[0], 3), " +- ", round(Gfxce[0], 3))
+        print("Best fit of source 1 centre in x: ", round(Gfxc[1] + Dx1, 3), " +- ", round(Gfxce[1], 3))
+        print("Best fit of source 1 centre in y: ", round(Gfxc[2] + Dy1, 3), " +- ", round(Gfxce[2], 3))
+        print("Best fit of source 1 sigma in x: ", round(Gfxc[3], 3), " +- ", round(Gfxce[3], 3))
+        print("Best fit of source 1 sigma in y: ", round(Gfxc[4], 3), " +- ", round(Gfxce[4], 3))
+        print("Best fit of source 1 Background x gradient: ", round(Gfxc[5], 5), " +- ", round(Gfxce[5], 5))
+        print("Best fit of source 1 Background y gradient: ", round(Gfxc[6], 5), " +- ", round(Gfxce[6], 5))
+        print("Best fit of source 1 Background constant: ", round(Gfxc[7], 5), " +- ", round(Gfxce[7], 5))
 
 
-            print(round(Gfxc[1]), round(Dx1), round(ADx3[v]), len(Imtca[0]), round(Gfxc[2]), round(Dy1), round(ADy3[v]), len(Imtca))
-            print("\nThe estimated shift of image ", D[v], ", relative to image ", D[20], " in x is:", round(Gfxc[1] + Dx1 + ADx3[v] - 0.5*len(Imtca[0]) + 1, 3), " +- ", round(Gfxce[1], 3), ", compared to previous estimate: ", ADx3[v])
-            print("The estimated shift of image ", D[v], ", relative to image", D[20], " in y is:", round(Gfxc[2] + Dy1 + ADy3[v] - 0.5*len(Imtca) + 1, 3), ", compared to previous estimate: ", ADy3[v])
-            ADx3[v] = Gfxc[1] + Dx1 + ADx3[v] - 0.5*len(Imtca[0]) + 1
-            ADy3[v] = Gfxc[2] + Dy1 + ADy3[v] - 0.5*len(Imtca) + 1
+        print(round(Gfxc[1]), round(Dx1), round(ADx3[v]), len(Imtca[0]), round(Gfxc[2]), round(Dy1), round(ADy3[v]), len(Imtca))
+        print("\nThe estimated shift of image ", D[v], ", relative to image ", D[20], " in x is:", round(Gfxc[1] + Dx1 + ADx3[v] - 0.5*len(Imtca[0]) + 1, 3), " +- ", round(Gfxce[1], 3), ", compared to previous estimate: ", ADx3[v])
+        print("The estimated shift of image ", D[v], ", relative to image", D[20], " in y is:", round(Gfxc[2] + Dy1 + ADy3[v] - 0.5*len(Imtca) + 1, 3), ", compared to previous estimate: ", ADy3[v])
+        ADx3[v] = Gfxc[1] + Dx1 + ADx3[v] - 0.5*len(Imtca[0]) + 1
+        ADy3[v] = Gfxc[2] + Dy1 + ADy3[v] - 0.5*len(Imtca) + 1
 
 stsbx = round(sum(ADx3) / N)
 stsby = round(sum(ADy3) / N)
