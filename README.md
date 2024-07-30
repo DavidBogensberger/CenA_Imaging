@@ -1,5 +1,5 @@
 # Cen A Imaging
-This code is for analyzing Chandra subpixel images of Centaurus A, to look for variation and proper motions.
+This code is for analyzing Chandra subpixel images of Centaurus A, to look for variation and proper motions. All these files can be adapted for use with other observations, other objects, and other data sets. 
 
 ### Selectimageregion_createsubpixelimages.py
 This code is used to create the subpixel images from the different observations, which are used later in the rest of the code. 
