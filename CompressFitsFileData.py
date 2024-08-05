@@ -1,29 +1,13 @@
 #This code loads in fits files, and only saves the data that is needed for the later imaging analysis. 
 
-import matplotlib.pyplot as plt
-from astropy.visualization import astropy_mpl_style
-#plt.style.use(astropy_mpl_style)
 from astropy.utils.data import get_pkg_data_filename
 from astropy.io import fits
-from astropy.table import Table
-from astropy.convolution import Gaussian2DKernel
 import numpy as np
 import math
-import matplotlib.pyplot as plt
-import matplotlib.font_manager as font_manager
-import matplotlib
 import os.path
 import os
 import scipy.optimize
-import matplotlib.ticker as ticker
-from matplotlib.ticker import MultipleLocator, FormatStrFormatter, AutoMinorLocator, StrMethodFormatter
-from PIL import Image
 import scipy
-import scipy.optimize
-from scipy.signal import convolve
-import time
-from scipy import signal
-from scipy.ndimage import gaussian_filter
 
 D = ["00962", "02978", "03965", "08489", "08490", "10725", "10722", "11846", "12156", "13303", "15294", "16276", "17890", "17891", "18461", "19747", "19521", "20794", "21698", "22714", '24322', '23823', '24321', '26405', '24319', '24325', '24323', '26453', '24318', '24324', '24320', '24326', '27344', '27345']
 
