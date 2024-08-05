@@ -15,7 +15,7 @@ Align_xcorr_vsallimg.py expands on this, by performing the cross-correlation of 
 Align_xcorr_vsallimg_smth.py does the same thing as Align_xcorr_vsallimg.py, but smoothes the images first, before performing the cross-correlation. 
 
 ### Propermotion.py
-This is the code that runs the proper motion algorithm on the set of images, with alignments as found by one of the align_xcorr codes. It outputs a fits file containing the results of the iterative proper motion fits. 
+This is the code that runs the proper motion algorithm on the set of images, with alignments as found by one of the align_xcorr codes. It outputs a fits file containing the results of the iterative proper motion fits. The procedure loads in all available images of a particular region, and combines it with the time of observation. It fits the profile of a jet knot or other feature using a two-dimensional Gaussian function, which is translated linearly in time across the image space. It assumes a constant background. It calculates the proper motion in two distinct directions, defined by the angle relative to the vertical. The two-dimensional Gaussian function can have different widths in the jet direction, and perpendicular to it.   
 
 ### Bestfitpropermotions.py
-This code extracts the relevant data from the fits file outputted by Propermotion.py. It corrects these for possible offsets, and adjusts the uncertainties in the measurements to accommodate the uncertainty of the alignment. 
+This code extracts the relevant data from the fits file outputted by Propermotion.py. It corrects these for possible offsets, and adjusts the uncertainties in the measurements to accommodate the uncertainty of the alignment. The proper motions calculated by the Propermotion.py code are expressed in units of pixels/year. This code converts that into a fractino of the speed of light. 
