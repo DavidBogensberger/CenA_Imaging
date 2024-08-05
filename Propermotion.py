@@ -1,28 +1,13 @@
 #This code calculates the proper motion of a selected source in Cen A images, by fitting a 2D Gaussian function across the distribution of counts in each of the aligned images, assuming that the center shifts linearly in x and y coordinates as a function of time. The proper motion is measured along two axes, which are rotated by an angle theta relative to x and y. The 2D gaussian fitting function can have a different extent in the two axes along which motion is measured. This function assumes a steady background around the source, and a consistant shape of the source throughout the observations. The results of the fits are printed out at the end, and are also saved to a file. The calculation of the apparent proper motion is performed in units of subpixels/year. This needs to be converted to other units for use.
 
-import matplotlib.pyplot as plt
-from astropy.visualization import astropy_mpl_style
-#plt.style.use(astropy_mpl_style)
-from astropy.utils.data import get_pkg_data_filename
 from astropy.io import fits
 from astropy.table import Table
-from astropy.convolution import Gaussian2DKernel
 import numpy as np
 import math
-import matplotlib.pyplot as plt
-import matplotlib.font_manager as font_manager
-import matplotlib
 import os.path
 import os
 import scipy.optimize
-import matplotlib.ticker as ticker
-from matplotlib.ticker import MultipleLocator, FormatStrFormatter, AutoMinorLocator, StrMethodFormatter
-from PIL import Image
 import scipy
-import scipy.optimize
-from scipy.signal import convolve
-import time
-from scipy import signal
 
 matplotlib.rcParams['mathtext.fontset'] = 'stix'
 matplotlib.rcParams['font.family'] = 'STIXGeneral'
