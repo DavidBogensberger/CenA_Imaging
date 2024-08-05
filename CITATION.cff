@@ -1,9 +1,12 @@
 cff-version: 1.1.0
+message: "If you use this software, please cite it as below."
 authors:
-- family-names: Bogensberger
-  given-names: David
+- family-names: "Bogensberger"
+  given-names: "David"
 orcid: https://orcid.org/0000-0002-5924-4822
-title:DavidBogensberger/CenA_Imaging: Version used for paper: "Superluminal proper motion in the X-ray jet of Centaurus A"
+title: "Calculating proper motion in X-ray jet knots"
 version: v1.0
+doi: 10.5281/zenodo.13223454
 date-released: 2024-08-05
+url: "https://github.com/DavidBogensberger/CenA_Imaging"
                             
