@@ -1,25 +1,11 @@
-import matplotlib.pyplot as plt
-from astropy.visualization import astropy_mpl_style
 from astropy.utils.data import get_pkg_data_filename
 from astropy.io import fits
-from astropy.table import Table
-from astropy.convolution import Gaussian2DKernel
 import numpy as np
 import math
-import matplotlib.pyplot as plt
-import matplotlib.font_manager as font_manager
-import matplotlib
 import os.path
 import os
 import scipy.optimize
-import matplotlib.ticker as ticker
-from matplotlib.ticker import MultipleLocator, FormatStrFormatter, AutoMinorLocator, StrMethodFormatter
-from PIL import Image
 import scipy
-import scipy.optimize
-from scipy.signal import convolve
-import time
-from scipy import signal
 
 matplotlib.rcParams['mathtext.fontset'] = 'stix'
 matplotlib.rcParams['font.family'] = 'STIXGeneral'
