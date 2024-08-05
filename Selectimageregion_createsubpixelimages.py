@@ -1,4 +1,4 @@
-#This code selects the region around the nucleus of Cen A for the following imaging analysis. It is based on an initial visual estimate of the center. This is later corrected in aligning codes.
+#This code prints out the set of CIAO commands to select the region around the nucleus of Cen A for the following imaging analysis. It is based on an initial visual estimate of the center. This is later corrected in aligning codes.
 
 #Selection of observations:
 D = ["00962", "02978", "03965", "08489", "08490", "10725", "10722", "11846", "12156", "13303", "15294", "16276", "17890", "17891", "18461", "19747", "19521", "20794", "21698", "22714", '24322', '23823', '24321', '26405', '24319', '24325', '24323', '26453', '24318', '24324', '24320', '24326', '27344', '27345']
