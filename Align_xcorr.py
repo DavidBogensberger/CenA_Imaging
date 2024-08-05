@@ -7,11 +7,6 @@ import os
 import scipy.optimize
 import scipy
 
-matplotlib.rcParams['mathtext.fontset'] = 'stix'
-matplotlib.rcParams['font.family'] = 'STIXGeneral'
-matplotlib.pyplot.title(r'ABC123 vs $\mathrm{ABC123}^{123}$')
-plt.rcParams.update({'font.size': 17})
-
 sps = 16 #how many subpixels fit into a single pixel along one axis.
 
 #Select the following observations, for which the streak does not intersect the jet:
